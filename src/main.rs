@@ -14,6 +14,24 @@ impl State {
             mode: GameMode::Menu,
         }
     }
+
+    fn play(&mut self, ctx: &mut BTerm) {
+        self.mode = GameMode::End;
+    }
+
+    fn main_menu(&mut self, ctx: &mut BTerm) {
+        ctx.cls();
+        ctx.print_centered(5, "Welcone to Flappy Dragon");
+        ctx.print_centered(8, "(P) Play Game");
+        ctx.print_centered(9, "(Q) Quit Game");
+    }
+
+    fn dead(&mut self, ctx: &mut BTerm) {
+        ctx.cls();
+        ctx.print_centered(5, "You are dead");
+        ctx.print_centered(8, "(P) Play Game");
+        ctx.print_centered(9, "(Q) Quit Game");
+    }
 }
 impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
