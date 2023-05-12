@@ -12,6 +12,16 @@ struct Player {
     velocity: f32,
 }
 
+impl Player {
+    fn new(x: i32, y: i32) -> Self {
+        Player {
+            x,
+            y,
+            velocity: 0.0,
+        }
+    }
+}
+
 struct State {
     mode: GameMode,
 }
