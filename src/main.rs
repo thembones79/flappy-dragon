@@ -67,6 +67,7 @@ impl State {
     }
 
     fn play(&mut self, ctx: &mut BTerm) {
+        ctx.cls_bg(NAVY);
         self.mode = GameMode::End;
     }
 
